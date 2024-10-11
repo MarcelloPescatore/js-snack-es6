@@ -118,16 +118,32 @@ for (let i = 0; i< bikeShop.length; i++){
 }
 
 // find a smallest weight
-let smallestWeight = Math.min(...allWeight); //spread operator
-console.log(smallestWeight);
-for (let i = 0; i< bikeShop.length; i++){
-    if (bikeShop[i].weight === smallestWeight){
-        const lightestBike = bikeShop[i]
+
+// Spread operator
+// let smallestWeight = Math.min(...allWeight); 
+// console.log(smallestWeight);
+// for (let i = 0; i< bikeShop.length; i++){
+//     if (bikeShop[i].weight === smallestWeight){
+//         const lightestBike = bikeShop[i]
         
+//         document.querySelector('.name').innerHTML = `${bikeShop[i].name}`
+//         document.querySelector('.weight').innerHTML = `Peso: ${bikeShop[i].weight}kg`
+//     }
+// }
+
+// Loop solution
+let lightestBike = bikeShop[0].weight;
+
+for (let i = 1; i < bikeShop.length; i++){
+    if (lightestBike > bikeShop[i].weight){
+        lightestBike = bikeShop[i].weight
+
+        // add markup 
         document.querySelector('.name').innerHTML = `${bikeShop[i].name}`
         document.querySelector('.weight').innerHTML = `Peso: ${bikeShop[i].weight}kg`
     }
 }
+
 
 
 

@@ -254,35 +254,36 @@ function getRndInteger(min, max) {
 
 // Max points avaible 
 const maxPoints = 3 * footballTeams.length;
-// raplace points value
 
-for(let i= 0; i<footballTeams.length; i++){
-    let randomPoints =  getRndInteger(0,maxPoints);
-    let objectTeam = footballTeams[i];
-    // if the value is zero raplace else do nothing
-    if (objectTeam['points'] === 0){
-        objectTeam['points'] = randomPoints;
-    }
-}
- 
-// raplace fouls value
-for(let i= 0; i<footballTeams.length; i++){
-    let randomFouls =  getRndInteger(0,100);
-    let objectTeam = footballTeams[i];
-    if (objectTeam['fouls'] === 0){
-        objectTeam['fouls'] = randomFouls;
-    }
-}
-
-// create new array just with name and fouls
+// create an array without points
 let footballTeamsNameFoulsOnly =[];
 let key = 'points';
 
-for(let i=0 ; i<footballTeams.length; i++){
+
+
+
+for(let i= 0; i<footballTeams.length; i++){
     let objectTeam = footballTeams[i];
+
+    // raplace points value
+    let randomPoints =  getRndInteger(0,maxPoints);
+    // if the value is zero raplace else do nothing
+    if (objectTeam['points'] === 0){
+        objectTeam['points'] = randomPoints;
+    };
+
+    // replace fouls value 
+    let randomFouls =  getRndInteger(0,100);
+    // if the value is zero raplace else do nothing
+    if (objectTeam['fouls'] === 0){
+        objectTeam['fouls'] = randomFouls;
+    };
+
+    // delate the key points and push the objects into new array
     delete objectTeam[key];
     footballTeamsNameFoulsOnly.push(footballTeams[i])
 }
+ 
 // stamp the new array in console
 console.log(footballTeamsNameFoulsOnly);
 

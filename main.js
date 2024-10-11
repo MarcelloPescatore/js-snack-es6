@@ -109,29 +109,28 @@ const bikeShop = [
 
 // create a loop take all the weight and then find the smallest number
 
+// 1) Spread operator
 // create an array with all weight
-let allWeight = [];
-// create a loop
-for (let i = 0; i< bikeShop.length; i++){
-    let singleWeight = bikeShop[i].weight;
-    allWeight.push(singleWeight);
-}
-
+// let allWeight = [];
+// // create a loop
+// for (let i = 0; i< bikeShop.length; i++){
+//     let singleWeight = bikeShop[i].weight;
+//     allWeight.push(singleWeight);
+// }
 // find a smallest weight
-
-// Spread operator
 // let smallestWeight = Math.min(...allWeight); 
 // console.log(smallestWeight);
 // for (let i = 0; i< bikeShop.length; i++){
 //     if (bikeShop[i].weight === smallestWeight){
 //         const lightestBike = bikeShop[i]
         
+        // add markup
 //         document.querySelector('.name').innerHTML = `${bikeShop[i].name}`
 //         document.querySelector('.weight').innerHTML = `Peso: ${bikeShop[i].weight}kg`
 //     }
 // }
 
-// Loop solution
+// 2) Loop solution
 let lightestBike = bikeShop[0].weight;
 
 for (let i = 1; i < bikeShop.length; i++){

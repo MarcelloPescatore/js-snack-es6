@@ -138,6 +138,156 @@ for (let i = 0; i< bikeShop.length; i++){
 // Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 // Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
+// create an array with objects
+const footballTeams = [
+    {
+        name: 'Juventus',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'AC Milan',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Inter Milan',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'AS Roma',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Napoli',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Lazio',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Fiorentina',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Sampdoria',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Torino',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Bologna',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Atalanta',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Sassuolo',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Cagliari',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Genoa',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Empoli',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Verona',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Salernitana',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Monza',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Lecce',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Spezia',
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: 'Cremonese',
+        points: 0,
+        fouls: 0
+    }
+];
+
+// function that generates random numbers
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+// Max points avaible 
+const maxPoints = 3 * footballTeams.length;
+// raplace points value
+
+for(let i= 0; i<footballTeams.length; i++){
+    let randomPoints =  getRndInteger(0,maxPoints);
+    let objectTeam = footballTeams[i];
+    // if the value is zero raplace else do nothing
+    if (objectTeam['points'] === 0){
+        objectTeam['points'] = randomPoints;
+    }
+}
+ 
+// raplace fouls value
+for(let i= 0; i<footballTeams.length; i++){
+    let randomFouls =  getRndInteger(0,100);
+    let objectTeam = footballTeams[i];
+    if (objectTeam['fouls'] === 0){
+        objectTeam['fouls'] = randomFouls;
+    }
+}
+
+// create new array just with name and fouls
+let footballTeamsNameFoulsOnly =[];
+let key = 'points';
+
+for(let i=0 ; i<footballTeams.length; i++){
+    let objectTeam = footballTeams[i];
+    delete objectTeam[key];
+    footballTeamsNameFoulsOnly.push(footballTeams[i])
+}
+// stamp the new array in console
+console.log(footballTeamsNameFoulsOnly);
+
+
+
 
 
 

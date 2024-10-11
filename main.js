@@ -296,3 +296,18 @@ console.log(footballTeamsNameFoulsOnly);
 // Snack 3 (Bonus)
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+
+
+function bonusFunction (array, a, b){
+    if(a < b){
+        return array.slice(a + 1, b); /* così escludo quello in posizione a */
+    }else{
+        console.log('il valore A deve essere inferiore a B');
+    }
+}
+
+// test
+const arr = [10, 11, 12, 13, 14, 15, 16];
+const risultato = bonusFunction(arr, 2, 5); /* mi aspetto i valori agli indici compresi tra 2 e 5 ovvero 13, 14 */
+
+console.log(risultato);
